@@ -1,0 +1,22 @@
+{
+  "name": "nodemon-helper",
+  "version": "1.0.0",
+  "main": "index.cjs",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "exports": {
+    ".": {
+      "import": "./src/index.js",
+      "require": "./index.cjs"
+    }
+  },
+  "author": "SAMI",
+  "license": "ISC",
+  "description": "A simple Node.js helper for generating OTPs and sending email notifications using Nodemailer.",
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "nodemailer": "^6.9.16"
+  }
+}
