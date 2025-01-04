@@ -3,7 +3,7 @@
 Nodemon Helper is a simple Node.js package that allows developers to easily generate OTPs (One Time Passwords) and send email notifications using Nodemailer. This package provides easy integration into your Node.js projects and supports customizable OTP lengths.
 
 ## Features
-- Generate OTPs (4 or 6 digits) for use in your application
+- Generate OTPs for use in your application
 - Send OTPs and custom messages via email using Nodemailer
 - Simple and customizable integration with your Node.js project
 - Easy setup and usage
