@@ -60,24 +60,12 @@ console.log(`Generated OTP: ${otp}`);
 ### Send OTP via Email
 
 ```javascript
-helper.sendOtp('recipient-email@example.com', otp)
+helper.sendOtp('recipient-email@example.com','subject','your message here!', otp)
   .then(() => {
     console.log('OTP sent successfully!');
   })
   .catch((err) => {
     console.error('Error sending OTP:', err);
-  });
-```
-
-### Send Custom Message
-
-```javascript
-helper.sendMessage('recipient-email@example.com', 'Your custom message here!')
-  .then(() => {
-    console.log('Message sent successfully!');
-  })
-  .catch((err) => {
-    console.error('Error sending message:', err);
   });
 ```
 
@@ -101,14 +89,7 @@ Sends OTP via email.
 - `recipientEmail`: Recipient's email address
 - `otp`: OTP to send
 - Returns: Promise
-
-### `sendMessage(recipientEmail, message)`
-Sends custom message via email.
-
-- `recipientEmail`: Recipient's email address
-- `message`: Custom message to send
-- Returns: Promise
-
+- 
 ## Troubleshooting
 
 ### Gmail Issues
@@ -116,8 +97,7 @@ Sends custom message via email.
 - Confirm email credentials in `.env` file are correct
 
 ### OTP Generation Issues
-- Ensure `generateOtp` receives valid length (4 or 6)
-- Check console logs for generated OTP length
+- Check console logs for generated OTP is working
 
 ### Email Sending Issues
 - Review error logs
