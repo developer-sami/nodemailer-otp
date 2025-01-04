@@ -90,9 +90,9 @@ Constructor for initializing the helper with your email credentials.
 - `emailAccessKey`: Email provider access key or app-specific password
 
 ### `generateOtp(length)`
-Generates an OTP of specified length.
+Generates an OTP.
 
-- `length`: Number (4 or 6)
+- `length`: Number (4) //you can generate any length of otp. 
 - Returns: String containing the generated OTP
 
 ### `sendOtp(recipientEmail, otp)`
