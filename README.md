@@ -1,6 +1,6 @@
-# Nodemon Helper
+## nodemailer-otp 
 
-Nodemon Helper is a simple Node.js package that allows developers to easily generate OTPs (One Time Passwords) and send email notifications using Nodemailer. This package provides easy integration into your Node.js projects and supports customizable OTP lengths.
+Nodemailer-otp  is a simple Node.js package that allows developers to easily generate OTPs (One Time Passwords) and send email notifications using Nodemailer. This package provides easy integration into your Node.js projects and supports customizable OTP lengths.
 
 ## Features
 - Generate OTPs for use in your application
@@ -13,7 +13,7 @@ Nodemon Helper is a simple Node.js package that allows developers to easily gene
 To get started with `nodemon-helper`, follow these steps:
 
 ```bash
-npm install nodemon-helper
+npm install nodemailer-otp 
 ```
 
 Create a `.env` file in your project's root directory:
@@ -42,13 +42,24 @@ EMAIL_PASS=your-email-access-key
 ### Basic Setup
 
 ```javascript
-const NodemonHelper = require('nodemon-helper');
+const NodemailerHelper = require('nodemailer-otp');
 require('dotenv').config();
 
 // Initialize the helper
-const helper = new NodemonHelper(process.env.EMAIL_USER, process.env.EMAIL_PASS);
+const helper = new NodemailerHelper(process.env.EMAIL_USER, process.env.EMAIL_PASS);
 ```
+### For (ESM) Syntax
+```javascript
+import NodemailerHelper from 'nodemailer-otp';
+import dotenv from 'dotenv';
 
+// Load environment variables from .env file
+dotenv.config();
+
+// Initialize the helper
+const helper = new NodemailerHelper(process.env.EMAIL_USER, process.env.EMAIL_PASS);
+
+```
 ### Generate OTP
 
 ```javascript
@@ -60,18 +71,18 @@ console.log(`Generated OTP: ${otp}`);
 ### Send OTP via Email
 
 ```javascript
-helper.sendOtp('recipient-email@example.com','subject','your message here!', otp)
-  .then(() => {
-    console.log('OTP sent successfully!');
+helper.sendEmail('recipient-email@example.com','subject','your message here!', otp)
+  .then((response ) => {
+    console.log(response );
   })
   .catch((err) => {
-    console.error('Error sending OTP:', err);
+    console.error(err);
   });
 ```
 
 ## API Reference
 
-### `NodemonHelper(email, emailAccessKey)`
+### `NodemailerHelper(email, emailAccessKey)`
 Constructor for initializing the helper with your email credentials.
 
 - `email`: Your email address
